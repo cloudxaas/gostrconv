@@ -3,7 +3,6 @@ package cxstrconv
 import (
     "fmt"
     "strconv"
-    "github.com/cloudxaas/gocx"
 )
   
 func CXstrconv3BytesToUint16(in string) uint16 {
