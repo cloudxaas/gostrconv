@@ -5,10 +5,20 @@ import (
     "strconv"
 )
   
-func CXstrconv3BytesToUint16(in string) uint16 {
-    return uint16(strconv.FormatUint16(in,10)
+
+func Uint16toa(n uint16) string {
+    if n == 0 {
+        return "0"
+    }
+    
+    var b [5]byte
+    i := len(b) - 1
+    for n > 0 {
+        b[i] = byte(n%10) + '0'
+        n /= 10
+        i--
+    }
+    
+    return string(b[i+1:])
 }
-                  
-func CXstrconvUint16To3Bytes(in uint16) string {
-  return strconv.ParseUint16(in,36)
-}
+
