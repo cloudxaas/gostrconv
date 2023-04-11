@@ -4,6 +4,33 @@ import (
 	cx "github.com/cloudxaas/gocx"
 )
 
+func Inttoa(n int) string {
+	if n == 0 {
+		return "0"
+	}
+
+	var buf [20]byte // max int string length is 19 digits plus the sign
+	i := len(buf) - 1
+	neg := false
+
+	if n < 0 {
+		neg = true
+		n = -n
+	}
+
+	for n > 0 {
+		buf[i] = byte(n%10) + '0'
+		n /= 10
+		i--
+	}
+
+	if neg {
+		buf[i] = '-'
+		i--
+	}
+
+	return cx.B2s(buf[i+1:])
+}
 
 func Int8toa(n int8) string {
 	if n == 0 {
