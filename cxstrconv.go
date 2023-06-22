@@ -4,6 +4,22 @@ import (
 	cx "github.com/cloudxaas/gocx"
 )
 
+
+func Atoi(str string) int {
+
+    val := 0
+    for i := 0; i < len(s); i++ {
+        c := s[i]
+        if c < '0' || c > '9' {
+            break
+        }
+        val = val*10 + int(c-'0')
+    }
+    return val
+	
+}
+
+
 func Inttoa(n int) string {
 	if n == 0 {
 		return "0"
