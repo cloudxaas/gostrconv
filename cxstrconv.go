@@ -5,7 +5,7 @@ import (
 )
 
 
-func Atoi(str string) int {
+func Atoi(s string) int {
 
     val := 0
     for i := 0; i < len(s); i++ {
